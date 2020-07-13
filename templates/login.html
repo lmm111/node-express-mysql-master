@@ -43,7 +43,12 @@
 
                 }
                 sub_con = sub_con.querySelector('pre').innerHTML;  //取得返回值
-                console.log(JSON.parse(sub_con));
+                var data = JSON.parse(sub_con);
+                if (data.code == 200) {
+                    console.log(data);
+                    window.sessionStorage.setItem('userInfo',sub_con);
+                    window.location.href = './home';
+                }
             }
         }    
     </script>

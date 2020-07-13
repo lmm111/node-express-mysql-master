@@ -16,4 +16,8 @@ indexRouter.get('/register', (request, response) => {
     response.sendFile(resolve(__dirname, '../../templates/register.html'));
 });
 
+indexRouter.get('/home', (request, response) => {
+    response.sendFile(resolve(__dirname, '../../templates/home.html'));
+});
+
 module.exports = indexRouter;
