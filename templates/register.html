@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>用户注册</title>
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+</head>
+
+<body>
+    <div id="outer_box" class="register">
+        <h2>用户注册</h2>
+        <form action="http://localhost:3000/register" method="post">
+            <div class="clothes">
+                <label for="input_name">用 户 名</label>
+                <input id="input_name" type="text" name="user_name" placeholder="请输入用户名" />
+            </div>
+
+            <div class="clothes">
+                <label for="input_pwd">密   码</label>
+                <input id="input_pwd" type="password" name="user_pwd" placeholder="请输入密码" />
+            </div>
+
+            <div class="clothes">
+                <label for="input_repeat_pwd">确认密码</label>
+                <input id="input_repeat_pwd" type="password" name="user_repeat_pwd" placeholder="请再次输入密码" />
+            </div>
+
+            <div class="clothes">
+                <label for="input_email">注册邮箱</label>
+                <input id="input_email" type="text" name="user_email" placeholder="请输入邮箱地址" />
+            </div>
+
+            <div class="clothes">
+                <button class="register btn" type="submit">注册</button>
+                <a class="btn" href="http://localhost:3000/login">
+                    <button type="button">登录</button>
+                </a>
+            </div>
+        </form>
+    </div>
+</body>
+
+</html>

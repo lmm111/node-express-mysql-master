@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8" />
+    <title>用户登录</title>
+
+    <link rel="stylesheet" type="text/css" href="css/index.css" />
+</head>
+
+<body>
+    <div id="outer_box" class="login">
+        <h2>用户登录</h2>
+        <form action="http://localhost:3000/login" method="post" target="stop">
+            <div class="clothes">
+                <label for="input_name">用 户 名</label>
+                <input id="input_name" type="text" name="user_name" placeholder="请输入用户名" />
+            </div>
+
+            <div class="clothes">
+                <label for="input_pwd">密   码</label>
+                <input id="input_pwd" type="password" name="user_pwd" placeholder="请输入密码" />
+            </div>
+
+            <div class="clothes">
+                <a class="btn" href="http://localhost:3000/register">
+                    <button type="button">注册</button>
+                </a>
+                <button class="login btn" type="submit">登录</button>
+            </div>
+        </form>
+        <iframe name="stop" style="display:none;" id="iframetest"></iframe>
+    </div>
+    <script>
+        var oFrm = document.getElementById("iframetest");
+        oFrm.onload = oFrm.onreadystatechange = function () {
+            if (this.readyState && this.readyState != 'complete') return;
+            else {
+                if (document.all) {//IE
+                    var sub_con = document.frames["iframetest"].document;
+                } else {//Firefox
+                    var sub_con = document.getElementById("iframetest").contentDocument;
+
+                }
+                sub_con = sub_con.querySelector('pre').innerHTML;  //取得返回值
+                console.log(JSON.parse(sub_con));
+            }
+        }    
+    </script>
+</body>
+
+</html>
